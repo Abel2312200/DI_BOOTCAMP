@@ -13,7 +13,7 @@
 // Question 4
     if(indexNot<indexBad){
         sentence = sentence.replace('not that bad','good'); // replace 'not that bad' by 'good'
-        console.log(sentence);
+        console.log(sentence); // displaying the sentence modified
     } else{
-        console.log(sentence);
+        console.log(sentence); // displaying the original sentence
     }
