@@ -1,4 +1,5 @@
 // Exercice 1
+
     // Question 1 : creation of variables x and y
     let x=2, y= 5;
 
@@ -9,7 +10,9 @@
         console.log(`${x} is biggest number`); // Result to display
     }
 
+
 // Exercice 2
+
     // Question 1 : creation of newDog variable
     let newDog = "Chihuahua";
 
@@ -26,3 +29,20 @@
     }else{
         console.log("I don't car, I prefer cats");
     }
+
+
+// Exercice 3
+
+    // Question 1 : prompting the user for a number and saving the value
+    let z = prompt('Please, enter a number : ');
+
+    // Question 2 : Checking the variable parity
+    if(z%2 == 0){
+        alert(`${z} is an even number`);
+    }else{
+        alert(`${z} is an odd number`);
+    }
+
+
+
+
