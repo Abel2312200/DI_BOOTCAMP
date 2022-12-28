@@ -43,6 +43,20 @@
         alert(`${z} is an odd number`);
     }
 
+// Exercice 4
 
+    const users = ["Lea123", "Princess45", "cat&doglovers", "helooo@000"];
+
+    // Question 1 : checking the number of users that are online
+    if(users.length == 0){
+        console.log('No one is online .');
+    }else if(users.length == 1){
+        console.log(`${users[0]} is online .`);
+    }else if(users.length == 2){
+        console.log(`${users[0]} and ${users[1]} are online .`);
+    }else{
+        let numberOthersUsersOnLine = users.length - 2;
+        console.log(`${users[0]}, ${users[1]} and ${numberOthersUsersOnLine} are online .`);
+    }
 
 
