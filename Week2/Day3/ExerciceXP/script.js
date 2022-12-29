@@ -39,3 +39,32 @@ const people = ["Greg", "Mary", "Devon", "James"];
                 break; // out to array
             }
         }
+
+
+// Exercice 2
+
+        // Question 1 : array creation of  my five favorite colors
+        const colors = ["white","black","blue","yellow","pink"];
+
+        // Question 2 : displaying array values like that "My #1 choice is blue"
+        for(let color of colors){
+            console.log(`My #${colors.indexOf(color)+1} is ${color} \n`);
+        }
+
+        // Question 3 : displaying array values like that "My 1st choice is blue"
+        for(let color of colors){
+            switch(colors.indexOf(color)){
+                case 0:
+                    console.log(`My ${colors.indexOf(color)+1}st is ${color} \n`);
+                    continue;
+                case 1:
+                    console.log(`My ${colors.indexOf(color)+1}nd is ${color} \n`);
+                    continue;
+                case 2:
+                    console.log(`My ${colors.indexOf(color)+1}rd is ${color} \n`);
+                    continue;
+                default:
+                    console.log(`My ${colors.indexOf(color)+1}th is ${color} \n`);          
+            }
+        }
+
