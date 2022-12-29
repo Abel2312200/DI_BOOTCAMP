@@ -1,20 +1,43 @@
-//  reading of ages years
+// Exercice 1
 
-let youngerBirthYear = prompt('Age of younger : ');
-let olderBirthYear = prompt('Age of older : ');
+    //  reading of ages years
 
-// ages of each others
+    let youngerBirthYear = prompt('Age of younger : ');
+    let olderBirthYear = prompt('Age of older : ');
 
-let currentYear = new Date().getFullYear(); // current year
-let ageYounger = currentYear - youngerBirthYear; // younger's age
-let ageOlder = currentYear - olderBirthYear; // older's age
+    // ages of each others
 
-// searching of year
+    let currentYear = new Date().getFullYear(); // current year
+    let ageYounger = currentYear - youngerBirthYear; // younger's age
+    let ageOlder = currentYear - olderBirthYear; // older's age
 
-let numberYearHalfAge = ageOlder - ageYounger * 2; // searching number of years to add  
-let yearHalfAge =  currentYear + numberYearHalfAge; // Year when the younger one exactly half the age of older
+    // searching of year
 
-// Result
-alert(`This years is ${yearHalfAge}`);
+    let numberYearHalfAge = ageOlder - ageYounger * 2; // searching number of years to add  
+    let yearHalfAge =  currentYear + numberYearHalfAge; // Year when the younger one exactly half the age of older
+
+    // Result
+    alert(`This years is ${yearHalfAge}`);
+
+// Exercice 2
+
+    // Reading of value
+    let zipCode = prompt(`Please tap your zip code`);
+
+    // first way : without Regular Expressions
+    if(typeof(zipCode)=='number' && zipCode.length == 5 && !(zipCode.trim().search(" "))){
+        console.info('Succès');
+    } else {
+        console.error('Error');
+    }
+
+    // second way : using Regular Expressions
+    
+
+
+// Exercice 3
+
+    // Question 1 :   
+
 
 
