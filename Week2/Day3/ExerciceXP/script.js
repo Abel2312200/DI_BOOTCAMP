@@ -68,3 +68,56 @@ const people = ["Greg", "Mary", "Devon", "James"];
             }
         }
 
+
+// Exercice 3
+
+        // Question 1 :  Prompting the user for a number
+        let userNumber = prompt('Please, tap a number');
+        console.log(typeof(userNumber)); // type checking.
+
+        // Question 2 :
+        while(userNumber<10){
+            let userNumber = prompt('Please, tap a number');
+            if(userNumber >= 10)
+                break;
+        }
+        // do .. while loop is more relevant for this situation
+
+
+// Exercice 4
+
+        // Question 1 : Copying and pasting the oject to my file
+        const building = {
+            numberOfFloors: 4,
+            numberOfAptByFloor: {
+                firstFloor: 3,
+                secondFloor: 4,
+                thirdFloor: 9,
+                fourthFloor: 2,
+            },
+            nameOfTenants: ["Sarah", "Dan", "David"],
+            numberOfRoomsAndRent:  {
+                sarah: [3, 990],
+                dan:  [4, 1000],
+                david: [1, 500],
+            },
+        }
+
+        // Question 2 : displaying of number of floors
+        console.log(`Number of floors : ${building.numberOfFloors}`);
+
+        // Question 3 : displaying of number of apartements on the floors 1 and 3
+        console.log(`Apartement number on floor 1 : ${building.numberOfAptByFloor.firstFloor}`); // apartement on floor 1
+        console.log(`Apartement number on floor 3 : ${building.numberOfAptByFloor.thirdFloor}`); // apartement on floor 2
+
+        // Question 4 : displaying the name of second tenant and number of rooms in apartement has 
+        let nameSecondTenant = building.nameOfTenants[1];
+        console.log(`name of second tenant : ${nameSecondTenant}`); // output : dan
+        console.log(`rooms number of second tenant : ${building.numberOfRoomsAndRent.dan[0]}`); // output :  4
+
+        // Question 5 : sum Sarah's and David's rent compare to Dan's
+        let sumSamDavidRent =  building.numberOfRoomsAndRent.sarah[1] +  building.numberOfRoomsAndRent.david[1];
+        if(sumSamDavidRent > building.numberOfRoomsAndRent.dan[1] ){
+            building.numberOfRoomsAndRent.dan[1]=1200;
+            console.log(`New Dan's rent : ${building.numberOfRoomsAndRent.dan[1]=1200}`);
+        }
