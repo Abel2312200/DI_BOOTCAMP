@@ -42,11 +42,17 @@
                 amountOfTheBill -= amountOfTheBill*(tip/100);
                 break;
         }
-        console.log(amountOfTheBill); // Question 4 : displaying amount of the bill
+        console.log(`Tip amount : ${amountOfTheBill*(tip/100)}\nFinal bill : ${amountOfTheBill}`); // Question 4 : displaying amount of the bill
     }
 
     // Question 5 : call calculateTip function
     calculateTip();
 
 
+// Exercice 3 
+
+    // Question 1 : 
+    function isDivisible(){
+        
+    }
 
