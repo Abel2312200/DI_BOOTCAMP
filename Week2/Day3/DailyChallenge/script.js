@@ -6,11 +6,10 @@
         }
 
         // second way : loop tutorial
-        let i = 1;
-        while (i <= 6) {
-          while (i>0) {
-            console.log("*");
-            i--;
+        for(let i=0 ; i < 6; i++){
+          let numberStar = ''; //  line initialisation 
+          for(let j=0 ; j <= i; j++){
+            numberStar +='*';
           }
-          i++;
+          console.log(`${numberStar}\n`); // displaying
         }
