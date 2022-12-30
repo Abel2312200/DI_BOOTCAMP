@@ -11,5 +11,5 @@
           for(let j=0 ; j <= i; j++){
             numberStar +='*';
           }
-          console.log(`${numberStar}\n`); // displaying line
+          console.log(`${numberStar}\n`); // displaying of line
         }
