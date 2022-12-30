@@ -121,3 +121,59 @@ const people = ["Greg", "Mary", "Devon", "James"];
             building.numberOfRoomsAndRent.dan[1]=1200;
             console.log(`New Dan's rent : ${building.numberOfRoomsAndRent.dan[1]=1200}`);
         }
+
+    
+// Exercice 5
+
+        // Question 1
+        const family = {
+            pere: "Isaac",
+            mere: "Adjoua",
+            fils: "Abel",
+            fille: "Rita"
+        }
+
+        // Question 2 : displaying of keys
+        for(const key in family){
+            console.log(`${key}`);
+        }
+
+        // Question 3 : displaying of keys
+        for(const key in family){
+            console.log(`${family[key]}`);
+        }
+
+
+// Exercice 6
+
+const details = {
+    my: 'name',
+    is: 'Rudolf',
+    the: 'raindeer'
+  }
+
+        // Question 1: displaying keys and values
+        for(const key in details){
+            console.log(`${key} ${details[key]}`);
+        }
+
+
+// Exercice 7
+
+const names = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+
+        let nameInitialArray = []; // array for names initials
+
+        // picking up of names initials
+        for(let member of names){
+            nameInitialArray.push(member.charAt(0));
+        }
+
+        // sort array of names initials
+        nameInitialArray.sort();
+
+        // conversion array to string
+        let nameSocietySecret = nameInitialArray.join("").toString();
+
+        // displaying of name of society secret
+        console.log(nameSocietySecret);
