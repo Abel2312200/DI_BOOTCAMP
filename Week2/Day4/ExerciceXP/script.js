@@ -121,4 +121,60 @@
     // Question 4 : call of changeEnough function
     changeEnough(4.25, [25, 20, 5, 0]);
 
+// Exercice 6
+
+    // Question 1 : creation of  hotelCosts function
+    function hotelCost(){
+        let numberOfNight = 0;
+        do{
+            numberOfNight = prompt('How many nights you would like to stay in the hotel ?');
+        }while(isNaN(numberOfNight));
+        let hotelCosts = numberOfNight * 140 ;
+        return hotelCosts;
+    }
+    hotelCost();
+    
+    // Question 2 : creation of  planeRideCost function
+    function planeRideCost(){
+        let destination;
+        let planRideCosts = 300;
+        do{
+            destination = prompt('Where do you wanna go ?');
+        }while(typeof(destination) !== 'string');
+        switch(destination){
+            case (destination === 'London') :
+                planRideCosts = 183;
+                break;
+            case (destination === 'Paris') :
+                planRideCosts = 220;
+                break;
+            default:
+                break;
+        }
+        return planRideCosts;
+    }
+
+    // Question 3 : creation of  rentalCarCost function
+    function rentalCarCost(){
+        let numberOfDays = 0;
+        let rentalCarCosts = 0;
+        do{
+            numberOfDays = prompt('How many days you would like to rent the car ?');
+        }while(isNaN(numberOfNight));
+        rentalCarCosts = numberOfNight * 40;
+        if(numberOfDays > 10)
+            rentalCarCosts *= 0.95;
+        return rentalCarCosts;
+    }
+    // Question 4 : creation of  totalVacationCost function
+    function totalVacationCost(){
+        let _hotelCost = hotelCost();
+        let _planeRideCost = planeRideCost();
+        let _rentalCarCost = rentalCarCost();
+        alert(`The car cost : ${_hotelCost}, the hotel cost :${_planeRideCost}, the  plane tickets cost :${_rentalCarCost}\nTotal : ${hotelCosts + planeRideCosts +  rentalCarCosts}`);
+    }
+    // Question 5 : call totalVacationCost
+    totalVacationCost();
+    // Question 6 : Bonus
+
  
