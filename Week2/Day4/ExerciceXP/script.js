@@ -106,4 +106,19 @@
     // Question 5 : call of myBill function
     myBill();
 
+// Exercice 5
+
+    // Question 1, 2, 3 : creation of changeEnough function
+    function changeEnough(itemPrice, amountOfChange){
+        let response = false;
+        let sumChange = amountOfChange[0] * 0.25 + amountOfChange[1] * 0.10 + amountOfChange[2] * 0.05 + amountOfChange[3] * 0.01 ;
+        if(sumChange >= itemPrice){
+            response = true;
+        }
+        return response;
+    }
+
+    // Question 4 : call of changeEnough function
+    changeEnough(4.25, [25, 20, 5, 0]);
+
  
