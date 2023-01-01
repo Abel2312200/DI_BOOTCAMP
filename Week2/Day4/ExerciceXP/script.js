@@ -1,3 +1,4 @@
+
 // Exercice 1
 
     // Part I
@@ -49,10 +50,60 @@
     calculateTip();
 
 
-// Exercice 3 
+// Exercice 3
 
-    // Question 1 : 
-    function isDivisible(){
-        
+    // Question from 1 to 5 : creation of isDivisible function 
+    function isDivisible( divisor ){
+        let sum = 0 ;
+        for( let number = 0 ; number <= 500 ; number++){
+            if( number % divisor == 0 ){
+                console.log(number+" ");
+                sum += number ;
+            }
+        }
+        console.log("Sum : " + sum);
     }
 
+// Exercice 4
+
+    // Question 1 : adding stock and prices objects
+    const stock = { 
+        "banana": 6, 
+        "apple": 0,
+        "pear": 12,
+        "orange": 32,
+        "blueberry":1
+    }  
+
+    const prices = {    
+        "banana": 4, 
+        "apple": 2, 
+        "pear": 1,
+        "orange": 1.5,
+        "blueberry":10
+    }
+    
+    // Question 2 : creation of shoppingList
+    const shoppingList = [
+        "banana",
+        "orange",
+        "apple"
+    ]
+
+    // Question 3 and 4 : creation myBill function
+    function myBill(){
+        let totalPrice = 0;
+        for(let shoppingProduct of shoppingList){
+            if(shoppingProduct in stock) {
+                if(stock.shoppingProduct != 0){
+                    stock[shoppingList] -= 1; // question  bonus : decrease the item's stock
+                    totalPrice += prices[shoppingProduct];
+                }
+            }
+        }
+        return totalPrice;
+    }
+    // Question 5 : call of myBill function
+    myBill();
+
+ 
