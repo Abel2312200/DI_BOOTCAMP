@@ -1,4 +1,7 @@
-
+/**
+ * @author : Abel Ngbandaman
+ * @description : by asking the user choose a number, it diplays the number of bottles .
+ */
 let bottlesNumber = prompt('Choose a number to start with : ');
 let bottlesNumberToRemove = 1;
 console.log(`We start the song at ${bottlesNumber} bottles`);
