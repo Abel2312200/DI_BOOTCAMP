@@ -19,12 +19,12 @@ let secondLiSecondUl = document.getElementsByTagName('ul')[1].getElementsByTagNa
 secondLiSecondUl.remove(); // removing 'Sarah'
 
 // Bonus
-for(let i = 0; i < 2; i++){
-    let ulAtt = document.getElementsByTagName('ul')[i];
-    if(i === 0){ // adding classes of first ul
-        ulAtt.classList.add('university');
-        ulAtt.classList.add('attendance');
-    }
-    ulAtt.classList.add('student_list'); // adding student_list both ul
-}
+let bothUl = document.querySelectorAll('ul'); // selection of both Uls
+bothUl[0].classList.add("student_list");
+bothUl[1].classList.add("student_list");
+
+let firstUl = document.getElementsByTagName('ul')[0]; // selection of firt ul
+firstUl.classList.add("university","attendance");
+console.log(firstUl);
+console.log(bothUl);
 
