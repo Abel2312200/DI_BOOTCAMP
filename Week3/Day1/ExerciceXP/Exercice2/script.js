@@ -4,13 +4,11 @@
  */
 
 // adding a “light blue” background color to div
-let divAtt = document.getElementsByTagName('div')[0]; // retrieving div's attribute
+let divAtt = document.querySelector('div'); // retrieving div's attribute
 divAtt.classList.add('users');
-if(divAtt.style.backgroundColor === 'rgb(0, 119, 255)'){
-    alert('Hello x and y');
+if(divAtt.style.backgroundColor === "blue"){
+    // to do
 }
-console.log(divAtt);
-
 // mask <li> that contains 'John'
 let liToMask = document.getElementsByTagName('li')[0];
 console.log(liToMask);
