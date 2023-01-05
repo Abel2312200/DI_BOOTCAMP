@@ -8,21 +8,23 @@
  */
 
 function playTheGame(){
-    let response = confirm('Do you wanna play ?');
+    let response = confirm('Voulez vous jouer ?');
     if(!response){
-        alert('No problem, Goodbye');
+        alert('Pas de problème, Aurevoir');
     }else{
-        let numberUser = prompt('Please, enter a number : ');
+        let numberUser = prompt("S'il vous plait, entrez un nombre entre 0 et 10 : ");
         if(isNaN(numberUser)){
             do{
-                alert('Sorry, Not a number, Goodbye');
-                numberUser = prompt('Please, enter a number');
-            }while(isNaN(numberUser));
+                alert("Désolé, c'est un nombre :");
+                numberUser = prompt("S'il vous plait, réésayez : ");
+            }while(isNaN(numberUser) === false);
         }else{
+            let computerNumber = Math.round(Math.random() * 10);
+            console.log(computerNumber)
             if(numberUser < 0 || numberUser > 10){
-                alert("It's not a good number, Goodbye");
+                alert("Ce nombre n'est pas valide, Aurevoir !");
             }else{
-                let computerNumber = Math.round(Math.random(11));
+                compareNumbers(numberUser, computerNumber);
             }
         }
     }
@@ -38,23 +40,26 @@ function playTheGame(){
  */
 
 function compareNumbers(userNumber,computerNumber) {
-    let chanceNumber =  1;
-    do{
-        if(userNumber === computerNumber){
-            alert('WINNER');
+    let chance ;
+    for (let chanceNumber = 1; chanceNumber <= 2 ; chanceNumber++) {
+
+        if(userNumber == computerNumber){
+            alert('GAGNANT');
             break;
         }else{
             if(userNumber > computerNumber){
-                alert("Your number is bigger then the computer’s, guess again");
-                userNumber =  prompt('Try again, enter new number');
+                alert("Ton nombre est trop grand...");
             }else{
-                alert("Your number is smaller then the computer’s, guess again");
-                userNumber =  prompt('Try again, enter new number');
+                alert("Ton nombre est trop petit..");
             }
-        }
-    } while((userNumber === computerNumber) && (chanceNumber < 3));
-
-    if(chanceNumber == 3){
-        alert('out of chances');
+            userNumber =  prompt('Entrez nouveau nombre : ');
+        } 
+        chance = chanceNumber + 1;
     }
+    if(chance === 3) {
+        alert('PERDU : Nombre de chances épuisés');
+    }
+    // do{
+        
+    // } while((userNumber !== computerNumber) && (chanceNumber <= 3));
 }
