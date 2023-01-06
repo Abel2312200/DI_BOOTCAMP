@@ -2,30 +2,31 @@
 
 /**
  * @author : Abel Ngbandaman
- * @description : by asking the user if they would like to play the game, it determine if the  user choosed the  right number.
+ * @description : by asking the user if they would like to play the game, it determines if the  user choosed the  right number.
  * @param : empty
  * @returns : void 
  */
 
 function playTheGame(){
+
     let response = confirm('Voulez vous jouer ?');
+
     if(!response){
-        alert('Pas de problème, Aurevoir');
+        alert('Pas de problème, Au revoir');
     }else{
+        let computerNumber = Math.round(Math.random() * 10); // generation of computer's number
+        console.log(computerNumber)
+
         let numberUser = prompt("S'il vous plait, entrez un nombre entre 0 et 10 : ");
-        if(isNaN(numberUser)){
-            do{
-                alert("Désolé, c'est un nombre :");
-                numberUser = prompt("S'il vous plait, réésayez : ");
-            }while(isNaN(numberUser) === false);
+        while(isNaN(numberUser)){
+            alert(`Désolé , ${numberUser} n'est un nombre :`);
+            numberUser = prompt("S'il vous plait, réésayez : ");
+        };
+        
+        if(numberUser < 0 || numberUser > 10){
+            alert("Ce nombre n'est pas valide, Aurevoir !");
         }else{
-            let computerNumber = Math.round(Math.random() * 10);
-            console.log(computerNumber)
-            if(numberUser < 0 || numberUser > 10){
-                alert("Ce nombre n'est pas valide, Aurevoir !");
-            }else{
-                compareNumbers(numberUser, computerNumber);
-            }
+            compareNumbers(numberUser, computerNumber); // call of compareNumbers function
         }
     }
 }
@@ -33,33 +34,35 @@ function playTheGame(){
 
 
 /**
- * @author : Abel Ngbandaman
- * @description :  to check if the user's number is the same as the computer's number
- * @param : empty
+ * @description : This function checks if the user's number is the same as the computer's number and
+                  determines if the user is a winner or not.
+ * @param : userNumber : Number
+ * @param : computerNumber : Number
  * @returns : void
  */
 
 function compareNumbers(userNumber,computerNumber) {
-    let chance ;
-    for (let chanceNumber = 1; chanceNumber <= 2 ; chanceNumber++) {
 
+    let chanceUsed = 1 ; 
+
+    do{
         if(userNumber == computerNumber){
-            alert('GAGNANT');
+            alert(`GAGNANT !\nLe nombre était ${computerNumber}.`);
             break;
         }else{
             if(userNumber > computerNumber){
-                alert("Ton nombre est trop grand...");
+                alert('Ton nombre est trop grand...');
             }else{
-                alert("Ton nombre est trop petit..");
+                alert('Ton nombre est trop petit..');
             }
             userNumber =  prompt('Entrez nouveau nombre : ');
-        } 
-        chance = chanceNumber + 1;
+        }
+
+        chanceUsed += 1;
+
+    }while(chanceUsed <3)
+
+    if(chanceUsed === 3){
+        alert(`Perdu : Nombre de chances épuisé.\nLe nombre était ${computerNumber}.`);
     }
-    if(chance === 3) {
-        alert('PERDU : Nombre de chances épuisés');
-    }
-    // do{
-        
-    // } while((userNumber !== computerNumber) && (chanceNumber <= 3));
 }
