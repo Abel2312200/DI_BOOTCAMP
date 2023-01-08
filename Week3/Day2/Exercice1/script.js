@@ -14,7 +14,10 @@ function changeDisplay(){
 }
 
 function changeTextStyle(){
-    document.querySelectorAll('p');
+    let allP = document.querySelectorAll('p');
+    for (let index = 0; index < allP.length; index++) {
+        allP[index].innerHTML = '<b>'+ allP[index].textContent + '</b>';
+    }
 }
 
 function changeSize(){
