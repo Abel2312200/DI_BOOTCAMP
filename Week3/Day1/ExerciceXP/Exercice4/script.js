@@ -13,9 +13,9 @@ allBooks = [
     },
     {
         title :  "Go easy on me",
-        author : "Noel Ngbandaman",
+        author : "Noel Ngban",
         image : "",
-        alreadyRead : false
+        alreadyRead : true
     }
 ]
 
@@ -24,31 +24,44 @@ bookProperties = ['title','author','image','alreadyRead']; //
 
 
 // creation of table
-let table = document.createElement('table')  
-document.querySelector('div').appendChild(table); 
+let table = document.createElement('table');
+table.style.border = '2px solid'; // add border 
+document.querySelector('div').appendChild(table);
 
-// creation of rows
-for (let rowNumber = 0; rowNumber < 3; rowNumber++){
-    let row = document.createElement('tr')  
-    document.querySelector('table').appendChild(row); 
-    if(rowNumber === 0){// adding headers' table
-        bookProperties.forEach(propertie => {
-        let column = document.createElement('td')  
-        let newTextNode = document.createTextNode(propertie);
-        column.appendChild(newTextNode);
-        document.querySelector('tr').appendChild(column); 
-       });
-       continue;
-    // }else{
-    //             let column = document.createElement('td')
-    //             let newTextNode = document.createTextNode('eee');
-    //             column.appendChild(newTextNode);
-    //             document.querySelector('tr').appendChild(column);
-    // 
-    }
-    
-    // let newTextRow = document.createTextNode('roww');
-    // row.appendChild(newTextRow);
+// filling out the table
 
+for (let rowNumber = 0; rowNumber < 3; rowNumber++) {
+
+    // creation of table lines 
+    let tr = document.createElement('tr'); 
+    tr.setAttribute('id',`${rowNumber}`);
+    document.querySelector('table').appendChild(tr);
+
+    // creation of table columns
+    if(rowNumber === 0){ 
+        bookProperties.forEach(bookPropertie => {
+        let newTd = document.createElement('td')  
+        let newTextNode = document.createTextNode(bookPropertie);
+        newTd.appendChild(newTextNode);
+        newTd.style.border = '1px solid'; // add border 
+        document.getElementById(`${rowNumber}`).appendChild(newTd);
+        });
+    } else {
+        bookRow = allBooks[rowNumber - 1];
+        for(book in bookRow){
+        //creation of columns
+        let newTd = document.createElement('td')  
+        let newTextNode = document.createTextNode(bookRow[book]);
+        newTd.appendChild(newTextNode);
+        newTd.style.border = '1px solid'; 
+        
+        // add to the rowq
+        document.getElementById(`${rowNumber}`).appendChild(newTd);
+        }
+
+        console.log(`${bookRow['title']}  written by ${bookRow['author']}`); // display the book's  title and book's author
+
+        if(bookRow['alreadyRead'] === true)
+            document.getElementById(`${rowNumber}`).style.color = 'red';
+    }   
 }
-
