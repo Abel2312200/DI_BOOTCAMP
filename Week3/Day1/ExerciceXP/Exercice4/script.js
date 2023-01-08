@@ -43,7 +43,9 @@ for (let rowNumber = 0; rowNumber < 3; rowNumber++) {
         let newTd = document.createElement('td')  
         let newTextNode = document.createTextNode(bookPropertie);
         newTd.appendChild(newTextNode);
-        newTd.style.border = '1px solid'; // add border 
+        newTd.style.border = '1px solid'; // add border
+        
+        // add colums to the row
         document.getElementById(`${rowNumber}`).appendChild(newTd);
         });
     } else {
@@ -53,15 +55,16 @@ for (let rowNumber = 0; rowNumber < 3; rowNumber++) {
         let newTd = document.createElement('td')  
         let newTextNode = document.createTextNode(bookRow[book]);
         newTd.appendChild(newTextNode);
-        newTd.style.border = '1px solid'; 
+        newTd.style.border = '1px solid'; // add border
         
-        // add to the rowq
+        // add colums to the row
         document.getElementById(`${rowNumber}`).appendChild(newTd);
         }
 
         console.log(`${bookRow['title']}  written by ${bookRow['author']}`); // display the book's  title and book's author
 
+        // change color books already read
         if(bookRow['alreadyRead'] === true)
-            document.getElementById(`${rowNumber}`).style.color = 'red';
+            document.getElementById(`${rowNumber}`).style.color = 'red'; 
     }   
 }
